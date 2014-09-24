@@ -1,5 +1,4 @@
-===========
-Music Collection Application
+Music Collection C++ Application
 
 Frank Duckart
 
