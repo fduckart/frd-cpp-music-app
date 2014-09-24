@@ -1,0 +1,29 @@
+#!/bin/bash
+
+function runMusic() {
+
+  local PROGNAME="music"
+
+  # Remove previous program.
+  if [[ -e "${PROGNAME}" ]]
+  then
+    rm -f "${PROGNAME}"
+  fi 
+
+  echo "Running ${PROGNAME} build & run script..."
+
+  make "${PROGNAME}"
+  if [[ ! -e "${PROGNAME}" ]]
+  then
+    echo "Error: Did not build ${PROGNAME}."
+    exit 1  # Didn't get made.
+  fi
+
+  # Okay, start the music application.
+  echo 
+  ./${PROGNAME}
+  echo ".............................................."
+}
+
+runMusic
+exit 0

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+function runTest() {
+
+  local PROGNAME="test${1}"
+  
+  # Remove previous program.
+  if [[ -e "${PROGNAME}" ]]
+  then
+    rm -f "${PROGNAME}"
+  fi 
+
+  echo "Running ${PROGNAME} build & run script..."
+  
+  make "${PROGNAME}"
+  if [[ ! -e "${PROGNAME}" ]]
+  then
+    echo "Error: Did not build ${PROGNAME}."
+    exit 1  # Didn't get made.
+  fi
+  
+  # Okay, run test.
+  echo 
+  ./${PROGNAME}
+  echo ".............................................."
+}
+
+runTest "artist"
+runTest "command"
+runTest "track"
+runTest "genre"
+runTest "repository"
+runTest "record" 
+
+exit 0

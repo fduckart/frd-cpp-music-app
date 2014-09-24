@@ -1,0 +1,12 @@
+recordId:     104
+title:        Kind of Blue
+genre:        Jazz
+artistId:     44
+artist:       Miles Davis
+tracks:
+track 1:      So What
+track 2:      Fredie Freeloader
+track 3:      Blue in Green
+track 4:      All Blues
+track 5:      Flamenco Sketches
+total-tracks: 5
