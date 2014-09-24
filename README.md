@@ -1,8 +1,10 @@
 ===========
 Music Collection Application
+
 Frank Duckart
 
 **Overview**
+
 This app is a simple command driven interface used to add, 
 search, and update a music record collection.  The program
 was written for UNIX using the C++ programming language.  The
@@ -43,8 +45,8 @@ You can view some simple instructions on using the program
 by type help from the music> prompt.
 
 Use the help command to see the possible commands.
-Example: help
--------------------------------------------------------------------
+**Example -- help**
+
     music> help
     Command Help
       Use the following commands:
@@ -84,14 +86,14 @@ Example: help
 
       quit
         Quit the program.
--------------------------------------------------------------------
+
 
 
 The program provides a few ways to view data in the system.
 One way is to use the list command to view the details for
 all of the records or for a specific record ID.
 
-Example: list
+**Example: list**
 -------------------------------------------------------------------
     music> list
 
@@ -123,7 +125,7 @@ Example: list
 
 Use the add command to add a record and its tracks to the system.
 
-Example: add
+**Example: add**
 -------------------------------------------------------------------
     music> add
     Enter Artist Name :  AC/DC
@@ -144,7 +146,7 @@ Use the delete command to remove a record.  You need to specify
 the delete-type (record) and the record ID in able to remove 
 the entry.
 
-Example: delete record (Record ID)
+**Example: delete record (Record ID)**
 -------------------------------------------------------------------
     music> delete record 115
     music> 
@@ -161,7 +163,7 @@ track update changes a single track.
 
 Use the help command to see the usage pattern.  
 
-Example: update for specified track
+**Example: update for specified track**
 -------------------------------------------------------------------
     music> update track 104 5
     updating record 104, track 5.
@@ -174,7 +176,7 @@ Example: update for specified track
 
 
 Use the count command to see a simple record count.
-Example: count
+**Example: count**
 -------------------------------------------------------------------
     music> count
     Record Count: 3
@@ -194,7 +196,7 @@ The following are the types of possible searching:
     search record (keyword)
     search genre  (keyword)
 
-Example: search by artist and then by genre
+**Example: search by artist and then by genre**
 -------------------------------------------------------------------
     music> search artist Miles
     104: Miles Davis   Kind of Blue   Jazz 
@@ -205,14 +207,14 @@ Example: search by artist and then by genre
 -------------------------------------------------------------------
 
 
-Known Issues:
+**Known Issues:**
 * Up arrow to get command history still does not work.
 * Music data files need to have UNIX style End Of Line markers.
   Files with CR/LF (i.e., Windows) and CR (Mac) eol markers
   will not read properly.  
   
 ===================================================================
-More Notes                                   02 March 2006  
+More Notes --                                  02 March 2006  
 
 All of the functionality is virtually the same as to version 1. 
 I did make a slight change in the terminology of record titles,
