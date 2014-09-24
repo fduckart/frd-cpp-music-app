@@ -45,6 +45,7 @@ You can view some simple instructions on using the program
 by type help from the music> prompt.
 
 Use the help command to see the possible commands.
+
 **Example -- help**
 
     music> help
@@ -94,7 +95,7 @@ One way is to use the list command to view the details for
 all of the records or for a specific record ID.
 
 **Example: list**
--------------------------------------------------------------------
+
     music> list
 
     101: Richard & Linda Thompson   Shoot out the Lights   Folk Rock
@@ -120,7 +121,7 @@ all of the records or for a specific record ID.
             3. Blue in Green
             4. All Blues
             5. Flamenco Sketches
--------------------------------------------------------------------
+
 
 
 Use the add command to add a record and its tracks to the system.
