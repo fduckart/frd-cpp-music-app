@@ -33,8 +33,8 @@ void testNameSetters()
     Artist a1(1, "Frank Duckart");
     assert( a1.getName() == "Frank Duckart" );
 
-    Artist a2(2, "Jaimey Hamilton");
-    assert( a2.getName() == "Jaimey Hamilton" );
+    Artist a2(2, "Sandy Yang");
+    assert( a2.getName() == "Sandy Yang" );
     
     Artist a3(3, "Richard Thompson");
     assert( a3.getName() == "Richard Thompson" );
@@ -75,7 +75,7 @@ void testConstructor()
     assert( a.getArtistId() == 0 );
     
     // Need to pass in artist id when making object.
-    Artist a1(444, "Jaimey Hamilton");
+    Artist a1(444, "Sandy Yang");
     assert( a1.getArtistId() == 444 );
     
     cout << "OK\n";
