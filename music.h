@@ -7,17 +7,23 @@
 #include "record.h"
 #include "repository.h"
 
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::flush;
+using std::istringstream;
+using std::numeric_limits;
+using std::string;
 
 class Music {
   public:
-    Music(const string); 
+    Music(const string);
     Music(const Music &);
     ~Music();
-    
+
     void run();
     Repository * getRepository();
-    
+
   private:
     // Command dispatching and messages.
     void printUsageError(const string &);
@@ -25,15 +31,15 @@ class Music {
     void updateDispatcher(Command &);
     void displayHelp();
     int stoi(string);
-    
+
     // Updates.
-    void addRecord(); 
+    void addRecord();
     void deleteRecord(Command &);
     void addTracks(Record &);
     void updateTrack(Command &);
     void updateRecord(Command &);
     Record updateRecord(Record &);
-    
+
     // Printing.
     void printRecordCount();
     void printArtists();
@@ -41,7 +47,7 @@ class Music {
     void printRecords();
     void printRecords(Command &);
     void printDivider();
-    
+
     // Searching.
     void searchDispatcher(Command &);
     void searchGenre(string & term);
@@ -49,7 +55,7 @@ class Music {
     void searchRecord(string & term);
     void searchId(string & term);
     void searchTracks(string & term);
-    
+
     string source; // Path to repository.  Unused so far.
     Repository * repository;  // Data repository.
 };

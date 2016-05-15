@@ -7,43 +7,47 @@
 #include "artist.h"
 #include "track.h"
 
-using namespace std;
+using std::flush;
+using std::list;
+using std::string;
+using std::stringstream;
+using std::vector;
 
 class Record {
-  public:    
+  public:
     Record(string, int artistId);  // Constructor.
     Record(string, Artist &);      // Constructor.
     Record(const Record &r);       // Copy constructor.
-    
+
     ~Record();
-    
+
     // Functions.
     void print() const;
-    
+
     // Record details.
-    const string getRecordId() const;    
+    const string getRecordId() const;
     void setTitle(const string);
-    const string getTitle() const;    
+    const string getTitle() const;
     const string getGenre() const;
     void setGenre(const string g);
-    
+
     // Artist details.
     Artist * getArtist() const;
-    
-    // Track details.    
+
+    // Track details.
     void addTrack(Track &);
     list<Track> getTracks() const;
     Track getTrack(int) const;
     int getTrackCount();
     void updateTrack(Track &);
-    
+
   private:
     string recordId;
     string title;
-    string genre;  
-    Artist * artistPtr; 
-    vector<Track> tracks;    
-    
+    string genre;
+    Artist * artistPtr;
+    vector<Track> tracks;
+
     // Helper function.
     string itos(int i);
 };

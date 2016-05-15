@@ -3,24 +3,25 @@
 
 #include <string>
 
-using namespace std;
+using std::cout;
+using std::string;
 
 class Track {
   public:
     Track(const int, const string);
     Track(const Track &);
-        
+
     ~Track();
-    
-    void print() const;    
+
+    void print() const;
     int getNumber() const;
     const string getTitle() const;
     void setTitle(const string t);
-    
+
   private:
     int  number;
     string title;
-    
+
 };
 
 #endif

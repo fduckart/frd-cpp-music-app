@@ -4,20 +4,21 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+using std::cout;
+using std::string;
 
 class Artist {
   public:
     Artist(const int id, const string);
     Artist(const Artist &);  // Copy constructor.
-    
+
     ~Artist();
-    
-    void print() const;    
+
+    void print() const;
     const int getArtistId() const;
     const string getName() const;
     void setName(const string);
-        
+
   private:
     int artistId;  // Artist ID.
     string name;   // Artist name.

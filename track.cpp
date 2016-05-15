@@ -1,8 +1,6 @@
 #include <iostream>
 #include "track.h"
 
-using namespace std;
-
 // Standard constructor.
 Track::Track(const int n, const string t)
 {
@@ -18,28 +16,28 @@ Track::Track(const Track &t)
 }
 
 // Destructor.
-Track::~Track() 
+Track::~Track()
 {
     // Empty.
 }
 
 // Track number.
-int Track::getNumber() const 
+int Track::getNumber() const
 {
     return number;
 }
 
-const string Track::getTitle() const 
+const string Track::getTitle() const
 {
     return title;
 }
 
-void Track::setTitle(const string t) 
+void Track::setTitle(const string t)
 {
     title = t;
 }
 
-void Track::print() const 
+void Track::print() const
 {
     cout << number << ": " << title << '\n';
 }

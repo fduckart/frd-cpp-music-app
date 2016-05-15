@@ -6,8 +6,6 @@
 #include <assert.h>
 #include "command.h"
 
-using namespace std;
-
 // Standard constructor.
 Command::Command(const string& s)
 {
@@ -32,7 +30,7 @@ const string Command::getPrimary()
 {
     if (getTokenCount() == 0)
         return "";
-        
+
     return tokens[0];
 }
 
@@ -40,7 +38,7 @@ const string Command::getQualifier()
 {
     if (getTokenCount() < 2)
         return "";
-        
+
     return tokens[1];
 }
 
@@ -48,11 +46,11 @@ const string Command::getArguments()
 {
     if (getTokenCount() < 2)
         return "";
-        
+
     string::size_type pos = commandStr.find(getQualifier());
-    
+
     int qualifierLen = getQualifier().size();
-                
+
     return string(trim(commandStr.substr(pos + qualifierLen)));
 }
 
@@ -79,13 +77,13 @@ bool Command::hasArguments() {
 }
 
 vector<string> Command::tokenize(const string &fullCommand)
-{    
+{
     // Command argument tokenizing.
     // Break user command into individual tokens.
     string str(fullCommand);
     string delimiters(" \t");
-    vector<string> tokens;    
-    
+    vector<string> tokens;
+
     // Skip any delimiters at beginning of string.
     string::size_type lastPos = str.find_first_not_of(delimiters, 0);
 
@@ -95,29 +93,29 @@ vector<string> Command::tokenize(const string &fullCommand)
     while (string::npos != pos || string::npos != lastPos) {
         // Found a token, add it to the vector.
         tokens.push_back(str.substr(lastPos, pos - lastPos));
-        
+
         // Skip delimiters.
         lastPos = str.find_first_not_of(delimiters, pos);
-        
+
         // Find the next token.
         pos = str.find_first_of(delimiters, lastPos);
     }
-        
+
     return tokens;
 }
 
 // Helper function to trim whitespace off ends of a string.
-const string Command::trim(const string& s)  
+const string Command::trim(const string& s)
 {
     if (s.length() == 0)
         return s;
-        
+
     int f = s.find_first_not_of(" \t");  // Find first char.
     int e = s.find_last_not_of(" \t");   // Find ending char.
-    
+
     if (e == -1)
         return "";  // Didn't find any chars.
-        
+
     return string(s, f, e - f + 1);  // Trim off spaces.
 }
 
